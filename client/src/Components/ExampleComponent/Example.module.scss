@@ -1,0 +1,9 @@
+@import "../../ScssVariables/Variables.scss";
+// All styling can be done in here for the dedicated component 
+
+.container{
+    width: 0;
+    height: 0;
+    background-color: $white;
+    display: flex; 
+}

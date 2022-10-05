@@ -1,7 +1,7 @@
 @import "../../ScssVariables/Variables.scss";
 
 
-.container{
+.container {
     height: fit-content;
     width: 32vw;
     background-color: white;
@@ -11,15 +11,13 @@
     padding: 25px;
     flex-direction: column;
     align-items: center;
- 
 
-
-    h2{
+    h2 {
         text-align: center;
         width: 100%;
     }
 
-    .inputContainer{
+    .inputContainer {
         display: flex;
         align-items: center;
         width: 100%;
@@ -29,16 +27,16 @@
         gap: 30px;
     }
 
-    .input{
+    .input {
         width: 70%;
     }
 
-    .button{
+    .button {
         width: 30%;
         background-color: $purple;
     }
 
-    p{
+    p {
         margin: 0;
         font-weight: 200;
     }

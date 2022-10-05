@@ -3,4 +3,9 @@
     flex: 1;
     background-color: red !important;
  
+
+    .left{
+        width: fit-content;
+        display: flex;
+    }
 }

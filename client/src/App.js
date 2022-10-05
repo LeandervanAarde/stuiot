@@ -1,5 +1,5 @@
 
-import './App.scss';
+import './ScssVariables/Variables.scss';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './Routes/Home/Home.route';
 
@@ -8,18 +8,22 @@ import FanIOT from './Routes/FanIOT/FanIOT.route';
 import DrinksIOT from './Routes/DrinksIOT/DrinksIOT.route';
 import LightsIOT from './Routes/LightsIOT/LightsIOT.route';
 import ProductivityIOT from './Routes/ProductivityIOT/ProductivityIOT.route';
+import SignUp from './Routes/SignUp/SignUp.route';
 
 
-import NavigationPanel from './components/Navigation/Navigation.components';
+
+
+// import NavigationPanel from './components/Navigation/Navigation.components';
 
 function App() {
   return (
     <div className={"App"}>
 
-      <NavigationPanel />
+      {/* <NavigationPanel /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" index element={<Home />} />
+          <Route path="/SignUp" element={<SignUp/>}/>
           <Route path="/stusnacks" index element={<SnacksIOT />} />
           <Route path="/studrinks" index element={<DrinksIOT />} />
           <Route path="/stumaticfan" index element={<FanIOT />} />

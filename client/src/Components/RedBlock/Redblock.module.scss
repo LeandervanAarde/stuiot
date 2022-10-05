@@ -1,0 +1,10 @@
+@import "../../ScssVariables/Variables.scss";
+
+.container {
+    display: flex;
+    flex: 1;
+    background-color: red;
+    gap: 10px;
+    height: 10vh;
+
+}

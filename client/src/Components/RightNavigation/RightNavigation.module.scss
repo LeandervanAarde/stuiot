@@ -1,0 +1,15 @@
+@import "../../ScssVariables/Variables.scss";
+
+.container{
+
+    //This will go to the right side once the other containers have been added
+    min-width: 12vw;
+    max-width: 350px !important;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: sticky;
+    top: 0;
+    background-color: $background;
+}

@@ -1,0 +1,25 @@
+// Colours here
+$black: #091113;
+$red: #920202;
+$purple: #423EF8;
+$turqoiuse: #51B2C7;
+$white: #FFFFFF;
+$background: #1A1D26;
+
+//Typefaces here
+
+//@mixin here (this referes to how each thing will be setup such as h1) 
+
+
+//General styling for entire app 
+
+html{
+    background-color: $background;
+}
+
+.App{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+

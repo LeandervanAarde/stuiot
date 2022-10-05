@@ -1,10 +1,13 @@
 import React from 'react';
-import Redblock from '../../Components/RedBlock/Redblock.component';
+import RightNavigation from '../../Components/RightNavigation/RightNavigation.component';
+import styles from "./Home.module.scss"
 
 const Home = () => {
     return (
-        <div>
-            <Redblock/>
+        <div className={styles.container}>
+        
+
+        <RightNavigation/>
         </div>
     );
 };

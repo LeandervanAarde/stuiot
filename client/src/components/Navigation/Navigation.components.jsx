@@ -10,6 +10,7 @@ import drinksicon from '../../assets/drinksicon.svg';
 import fanicon from '../../assets/fanicon.svg';
 import lightsicon from '../../assets/lightsicon.svg';
 import productivitylockicon from '../../assets/productivityicon.svg';
+import { Link } from 'react-router-dom';
 
 export function NavigationPanel() {
 
@@ -23,17 +24,21 @@ export function NavigationPanel() {
                 </div>
                 <div className={styles.navigationpanel__linksgroup} >
 
-                    <Button> <img src={homeicon} activeclassname="active" className={styles.button}></img></Button>
-                    <Button><img src={snackicon} activeclassname="active"></img></Button>
-                    <Button><img src={drinksicon}></img></Button>
-                    <Button><img src={fanicon}></img></Button>
-                    <Button><img src={lightsicon}></img></Button>
-                    <Button><img src={productivitylockicon}></img></Button>
+
+                    <a href="/" ><Button > <img src={homeicon} className={styles.button}></img>
+                    </Button></a>
+
+                    <a href="/stusnacks" ><Button ><img src={snackicon} ></img></Button></a>
+                    <a href="/studrinks" ><Button ><img src={drinksicon}></img></Button></a>
+                    <a href="/stumaticfan" ><Button><img src={fanicon}></img></Button></a>
+                    <a href="/studiolights" ><Button><img src={lightsicon}></img></Button></a>
+                    <a href="/productivitytimer" > <Button><img src={productivitylockicon}></img></Button></a>
+
                 </div>
-
             </div>
-
         </>
+
+
     );
 };
 

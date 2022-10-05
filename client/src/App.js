@@ -1,17 +1,20 @@
 
-import { Route, Routes } from "react-router-dom";
-import RightNavigation from "./Components/RightNavigation/RightNavigation.component";
+import './App.scss';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './Routes/Home/Home.route';
-import "./ScssVariables/Variables.scss"
+import NavigationPanel from './components/Navigation/Navigation.components';
 
 function App() {
   return (
-    <div className={"App"}>
-      <Routes>
-        <Route path="/" index element={<Home />} />
-      </Routes>
-    </div>
+    <div className="App">
 
+      <NavigationPanel />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" index element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

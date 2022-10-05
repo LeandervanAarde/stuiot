@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./Home.module.scss";
 import NavigationPanel from "../../components/Navigation/Navigation.components"
+import RightNavigation from "../../components/RightNavigation/RightNavigation.component"
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <NavigationPanel/>
             </div>
 
+            <RightNavigation/>
         </div>
     );
 };

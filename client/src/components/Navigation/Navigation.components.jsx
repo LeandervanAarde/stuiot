@@ -16,28 +16,39 @@ export default function NavigationPanel() {
 
 
     return (
-
-        <>
-            <div className={styles.navigationpanel}>
-                {/* <ButtonGroup className={styles.homebutton}><Button>{HomeRoundedIcon}</Button></ButtonGroup> */}
+        <div className={styles.navigationpanel}>
+            {/* <ButtonGroup className={styles.homebutton}><Button>{HomeRoundedIcon}</Button></ButtonGroup> */}
+            <Link to="/">
                 <div className={styles.navigationpanel__logo}>
-                    <img src={logo} className={styles.navigationpanel__logo__stu}></img>
+                    <img src={logo} className={styles.navigationpanel__logo__stu} />
                 </div>
-                <div className={styles.navigationpanel__linksgroup} >
+            </Link>
+            <div className={styles.navigationpanel__linksgroup} >
+                <Link to="/">
+                    <Button > <img src={homeicon} className={styles.button} /></Button>
+                </Link>
 
+                <Link to="/stusnacks">
+                    <Button ><img src={snackicon} /></Button>
+                </Link>
 
-                    <a href="/" ><Button > <img src={homeicon} className={styles.button}></img>
-                    </Button></a>
+                <Link to="/studrinks">
+                    <Button > <img src={drinksicon} className={styles.button} /></Button>
+                </Link>
 
-                    <a href="/stusnacks" ><Button ><img src={snackicon} ></img></Button></a>
-                    <a href="/studrinks" ><Button ><img src={drinksicon}></img></Button></a>
-                    <a href="/stumaticfan" ><Button><img src={fanicon}></img></Button></a>
-                    <a href="/studiolights" ><Button><img src={lightsicon}></img></Button></a>
-                    <a href="/productivitytimer" > <Button><img src={productivitylockicon}></img></Button></a>
+                <Link to="/stumaticfan">
+                    <Button><img src={fanicon}></img></Button>
+                </Link>
 
-                </div>
+                <Link to="/studiolights">
+                    <Button><img src={lightsicon} /></Button>
+                </Link>
+
+                <Link to="/productivitytimer">
+                    <Button><img src={productivitylockicon} /></Button>
+                </Link>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -31,15 +31,13 @@
         grid-gap: 32px;
         height: auto;
         // background-color: antiquewhite;
-        width: 200px;
         display: grid;
-
+        text-align: center;
 
     }
 
-    .active {
-        background-color: #F6F6FA !important;
-        border-left: 7px solid #2b2b2b;
-        padding-left: 5px;
-    }
+}
+
+.MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    width: 100px;
 }

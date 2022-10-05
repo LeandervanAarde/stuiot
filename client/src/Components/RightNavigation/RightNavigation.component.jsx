@@ -3,7 +3,7 @@ import styles from "./RightNavigation.module.scss"
 const RightNavigation = () => {
     return (
         <div className={styles.container}>
-            Hello
+    
         </div>
     );
 };

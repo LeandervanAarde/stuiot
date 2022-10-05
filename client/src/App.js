@@ -6,7 +6,7 @@ import NavigationPanel from './components/Navigation/Navigation.components';
 
 function App() {
   return (
-    <div className="App">
+    <div className={"App"}>
 
       <NavigationPanel />
       <BrowserRouter>

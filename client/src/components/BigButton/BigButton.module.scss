@@ -1,0 +1,24 @@
+@import "../../ScssVariables/Variables.scss";
+
+
+.container{
+    display: flex;
+    width: 46%;
+    height: 80px;
+    gap: 15px;
+    background-color: #423EF8;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    padding: 10px;
+    align-items: center;
+
+    img{
+        width: 15%;
+    }
+
+    h4{
+        text-align: center;
+        width: 100%;
+    }
+    
+}

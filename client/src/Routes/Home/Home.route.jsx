@@ -13,17 +13,17 @@ const Home = () => {
     const [checked, setChecked] = useState(false)
     const [fanChecked, setFanChecked] = useState(false)
     const toggle = (e) => {
-        console.log(e.checked)
         setChecked(!checked)
     }
 
     const toggleFan = (e) => {
-        console.log(e.checked)
+
         setFanChecked(!fanChecked)
     }
 
   const items = [1,2,3,4]
 
+  const placeHolderUser = "The Stu team!"
 
     return (
         <div className={styles.container}>
@@ -31,6 +31,7 @@ const Home = () => {
                 <NavigationPanel />
             </div>
             <div className={styles.centerContainer}>
+                <h2>Welcome back, {placeHolderUser}</h2>
                 <GraphContainer />
                 <div className={styles.buttonContainer}>
                     <BigButton icon={fanicon} text={"Turn on Fan"} checked={checked} onClick={toggle} />

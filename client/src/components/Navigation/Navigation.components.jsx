@@ -45,8 +45,14 @@ export default function NavigationPanel() {
                 </Link>
 
                 <Link to="/productivitytimer">
-                    <Button><img src={productivitylockicon} /></Button>
+                    <Button><img src={productivitylockicon} /></Button>       
                 </Link>
+
+                <Link to="/SignUp">
+                        <Button variant="contained" className={styles.signout}>Sign out</Button>   
+                </Link>
+
+
             </div>
         </div>
     );

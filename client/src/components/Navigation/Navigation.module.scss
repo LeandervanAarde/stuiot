@@ -4,7 +4,7 @@
     grid-template-columns: 1fr;
     background-color: #091113;
     grid-gap: 8px;
-    height: 100vh;
+    height: 102vh;
     width: 220px;
     // border-top-right-radius: 20px;
     // border-bottom-right-radius: 20px;
@@ -34,6 +34,10 @@
         display: grid;
         text-align: center;
 
+    }
+
+    a{
+        text-decoration: none;
     }
 
 }

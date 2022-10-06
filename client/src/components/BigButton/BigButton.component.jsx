@@ -5,7 +5,7 @@ import { Switch } from '@mui/material';
 const BigButton = ({icon, text, toggle, checked, ...otherProps}) => {
     return (
         <div className={styles.container}>
-                <img src={icon}/>
+                <img src={icon} alt={"Icon"}/>
                 <h4>{text}</h4>
                 <Switch  defaultChecked color="default" checked={checked} {...otherProps}/>
         </div>

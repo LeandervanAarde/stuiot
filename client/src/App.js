@@ -22,8 +22,8 @@ function App() {
       {/* <NavigationPanel /> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/"  element={<Home />} />
-          <Route path="/SignUp" index element={<SignUp/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/SignUp" index element={<SignUp />} />
           <Route path="/stusnacks" index element={<SnacksIOT />} />
           <Route path="/studrinks" index element={<DrinksIOT />} />
           <Route path="/stumaticfan" index element={<FanIOT />} />

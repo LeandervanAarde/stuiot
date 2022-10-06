@@ -1,0 +1,10 @@
+@import "../../ScssVariables/Variables.scss";
+
+.container{
+    height: fit-content;
+    max-width: 350px;
+    padding: 10px;
+    flex-basis: 22%;
+    background-color: $black;
+    min-height: 235px;
+}

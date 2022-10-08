@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./GraphContainer.module.scss"
-const GraphContainer = () => {
+const GraphContainer = ({children, ...otherProps}) => {
     return (
-        <div className={styles.container}>
-            
+        <div className={styles.container} {...otherProps}>
+            {children}
         </div>
     );
 };

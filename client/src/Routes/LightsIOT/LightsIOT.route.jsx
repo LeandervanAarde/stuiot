@@ -52,6 +52,7 @@ const LightsIOT = () => {
                         <DoughnutChart
                             labels={testerData.map(i => i.name)}
                             data={testerData.map(i => i.data)}
+                            item={"STUdio lights"}
                         />
                     }
                 />

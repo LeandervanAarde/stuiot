@@ -3,7 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import 'chart.js/auto';
 import styles from "./DoughnutChart.module.scss"
 
-const DoughnutChart = ({labels, data}) => {
+const DoughnutChart = ({labels, data, item}) => {
     return (
         <Doughnut data={{
             labels: labels,
@@ -44,6 +44,17 @@ const DoughnutChart = ({labels, data}) => {
         //    },
        
            plugins: {
+            title: {
+                display: true,
+                text: `${item} used setting`,
+                position: "top",
+                color: "white",
+                font: {
+                    size: 24,
+                    weight: "bold",
+
+                }
+            },
             legend: {
                 position: "bottom",
                 display: false,

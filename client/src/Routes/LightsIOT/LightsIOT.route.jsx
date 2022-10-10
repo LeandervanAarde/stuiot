@@ -29,7 +29,6 @@ const LightsIOT = () => {
         }
     ]
 
-
     return (
         <div className={styles.container}>
             <div className={styles.left}>
@@ -38,24 +37,24 @@ const LightsIOT = () => {
 
             <div className={styles.centerContainer}>
                 <div className={styles.graphHolder}>
-                <GraphContainer
-                    id={styles.resize}
-                    children={
-                        <PolarRadar
-                            labels={testerData.map(i => i.name)}
-                            data={testerData.map(i => i.data)}
-                        />} />
+                    <GraphContainer
+                        id={styles.resize}
+                        children={
+                            <PolarRadar
+                                labels={testerData.map(i => i.name)}
+                                data={testerData.map(i => i.data)}
+                            />} />
 
-                <GraphContainer
-                    id={styles.resize}
-                    children={
-                        <DoughnutChart
-                            labels={testerData.map(i => i.name)}
-                            data={testerData.map(i => i.data)}
-                            item={"STUdio lights"}
-                        />
-                    }
-                />
+                    <GraphContainer
+                        id={styles.resize}
+                        children={
+                            <DoughnutChart
+                                labels={testerData.map(i => i.name)}
+                                data={testerData.map(i => i.data)}
+                                item={"STUdio lights"}
+                            />
+                        }
+                    />
                 </div>
                 <div className={styles.controls}>
                     <div className={styles.right}>

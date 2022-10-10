@@ -31,12 +31,10 @@ const LightsIOT = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.left}>
-                <NavigationPanel />
-            </div>
-
             <div className={styles.centerContainer}>
+            <h1>STUdio lights</h1>
                 <div className={styles.graphHolder}>
+                  
                     <GraphContainer
                         id={styles.resize}
                         children={

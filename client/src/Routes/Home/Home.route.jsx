@@ -50,9 +50,9 @@ const Home = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.left}>
+            {/* <div className={styles.left}>
                 <NavigationPanel />
-            </div>
+            </div> */}
             <div className={styles.centerContainer}>
                 <h2>Welcome back, {placeHolderUser}</h2>
                 <GraphContainer

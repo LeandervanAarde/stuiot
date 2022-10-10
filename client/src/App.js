@@ -13,14 +13,15 @@ import SignUp from './Routes/SignUp/SignUp.route';
 
 
 
-// import NavigationPanel from './components/Navigation/Navigation.components';
+import NavigationPanel from './components/Navigation/Navigation.components';
 
 function App() {
   return (
     <div className={"App"}>
 
-      {/* <NavigationPanel /> */}
+
       <BrowserRouter>
+      <NavigationPanel />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignUp" index element={<SignUp />} />

@@ -1,0 +1,18 @@
+@import "../../ScssVariables/Variables.scss";
+
+.snacks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    &__container {
+        margin-left: 24px;
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 16px;
+        height: 300px;
+        width: 900px;
+        background-color: #091113;
+        border-radius: 10px;
+    }
+}

@@ -9,7 +9,7 @@ import DrinksIOT from './Routes/DrinksIOT/DrinksIOT.route';
 import LightsIOT from './Routes/LightsIOT/LightsIOT.route';
 import ProductivityIOT from './Routes/ProductivityIOT/ProductivityIOT.route';
 import SignUp from './Routes/SignUp/SignUp.route';
-
+import RightNavigation from './components/RightNavigation/RightNavigation.component';
 
 
 
@@ -21,7 +21,7 @@ function App() {
 
 
       <BrowserRouter>
-      <NavigationPanel />
+        <NavigationPanel />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignUp" index element={<SignUp />} />
@@ -31,6 +31,8 @@ function App() {
           <Route path="/studiolights" index element={<LightsIOT />} />
           <Route path="/productivitytimer" index element={<ProductivityIOT />} />
         </Routes>
+        <div className='rightnav'> <RightNavigation /></div>
+
       </BrowserRouter>
     </div>
   );

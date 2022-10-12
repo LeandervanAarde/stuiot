@@ -15,12 +15,18 @@ $background: #1A1D26;
 
 //General styling for entire app 
 
-html{
+html {
     background-color: $background;
 }
 
-.App{
+.App {
     display: flex;
     min-height: 100vh;
 }
 
+.rightnav {
+    margin-left: 69%;
+    margin-top: 10px;
+    display: grid;
+    grid-gap: 20px
+}

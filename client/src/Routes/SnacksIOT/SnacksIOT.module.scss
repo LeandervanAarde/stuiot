@@ -2,7 +2,9 @@
 
 .snacks {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 500px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
 
     &__container {
         margin-left: 24px;
@@ -10,9 +12,83 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 16px;
-        height: 300px;
+        height: 500px;
         width: 900px;
         background-color: #091113;
-        border-radius: 10px;
+        border-radius: 5px;
+
+
+
+        &__snacksgraph {
+            width: 900px;
+        }
+
+
+    }
+
+    &__report__container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        padding: 32px;
+        grid-template-columns: 50%;
+        height: 100px;
+
+        grid-gap: 32px;
+
+        &__daily {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 300px;
+            height: 100px;
+            color: #ffff;
+
+            &__h1 {
+                display: grid;
+                font-family: 'MerriweatherSans';
+                color: #ffff;
+            }
+
+            &__controls {
+                display: grid;
+                grid-template-columns: 50px 70px 50px;
+                align-items: baseline;
+            }
+        }
+
+        &__daily2 {
+
+            justify-content: left;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 300px;
+            height: 100px;
+            color: #ffff;
+
+            &__h2 {
+                display: grid;
+                font-family: 'MerriweatherSans';
+                color: #ffff;
+            }
+
+            &__controls {
+
+                display: grid;
+                grid-template-columns: 50px 70px 50px;
+                align-items: baseline;
+            }
+        }
+
+        // &__dispense {
+        //     display: grid;
+        //     width: 100px;
+        //     grid-template-columns: auto;
+        // }
+    }
+
+    &__dispense {
+        width: 100px;
+
     }
 }

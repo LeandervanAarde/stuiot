@@ -2,7 +2,7 @@
 
 .right{
     width: 100%;
-    background: red;
+    // background: red;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -19,6 +19,8 @@
     gap: 40px;
     max-height: 95vh;
     padding: 30px;
+    // border-radius: 105px;
+    // background-color: red;
     h2{
         color: white;
         margin: 0;

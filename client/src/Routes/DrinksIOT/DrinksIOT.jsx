@@ -1,7 +1,7 @@
 import React from 'react';
 import BubbleChart from '../../components/BubbleChart/BubbleChart';
 import GraphContainer from '../../components/GraphContainer/GraphContainer.component';
-import RightNavigation from '../../components/RightNavigation/RightNavigation.component';
+// import RightNavigation from '../../components/RightNavigation/RightNavigation.component';
 import styles from '../DrinksIOT/DrinksIOT.module.scss'
 
 
@@ -21,7 +21,7 @@ const DrinksIOT = () => {
                         }
                     />
                     <div className={styles.right}>
-                    <RightNavigation />
+                    {/* <RightNavigation /> */}
                           </div>
             </div>
             </div>

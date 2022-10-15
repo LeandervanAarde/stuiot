@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from "./RightNavigation.module.scss";
+import drinksicon from '../../assets/drinksicon.svg';
 import snackicon from '../../assets/snackicon.svg';
 import fanicon from "../../assets/fanicon.svg"
 import lightsicon from '../../assets/lightsicon.svg';
@@ -64,7 +65,7 @@ const RightNavigation = () => {
         },
         {
             name: "Last dispensed Drink",
-            image: snackicon,
+            image: drinksicon,
             status: `${hours === 0 ? "00" : hours}: ${minutes === 0 ? "00" : minutes < 10 ? `0${minutes}` : minutes}: ${seconds === 0 ? "00" : seconds < 10 ? `0${seconds}` : seconds} `
         },
     ]

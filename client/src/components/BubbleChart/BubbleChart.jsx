@@ -18,20 +18,20 @@ export const options = {
 export const data = {
     datasets: [
       {
-        label: 'Red dataset',
+        label: 'Day',
         data: Array.from({ length: 50 }, () => ({
-          x: ({ min: -100, max: 100 }),
-          y: ({ min: -100, max: 100 }),
-          r: ({ min: 5, max: 20 }),
+          x: 5,
+          y: 2,
+          r: 10,
         })),
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       {
         label: 'Blue dataset',
         data: Array.from({ length: 50 }, () => ({
-          x: ({ min: -100, max: 100 }),
-          y: ({ min: -100, max: 100 }),
-          r: ({ min: 5, max: 20 }),
+          x: 5,
+          y: 1,
+          r: 5,
         })),
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },

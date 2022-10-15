@@ -10,6 +10,7 @@ import ProductivityIOT from './Routes/ProductivityIOT/ProductivityIOT.route';
 import SignUp from './Routes/SignUp/SignUp.route';
 import RightNavigation from './components/RightNavigation/RightNavigation.component';
 import NavigationPanel from './components/Navigation/Navigation.components';
+import BubbleChart from './components/BubbleChart/BubbleChart';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/stumaticfan" index element={<FanIOT />} />
           <Route path="/studiolights" index element={<LightsIOT />} />
           <Route path="/productivitytimer" index element={<ProductivityIOT />} />
+          <Route path="/bubbles" index element={<BubbleChart />} />
+
         </Routes>
         {/* <div className='rightnav'> <RightNavigation /></div> */}
 

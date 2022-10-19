@@ -61,7 +61,7 @@ const ProductivityIOT = () => {
                     <div className={styles.left}>
                         <TextField className={styles.input} label="Hours" variant="outlined" />
                         <TextField className={styles.input} label="Minutes" variant="outlined" />
-                        <TextField className={styles.input} label="Seconds" variant="outlined"  />
+                        <TextField className={styles.input} label="Seconds" variant="outlined" />
                     </div>
                 </div>
             </div>

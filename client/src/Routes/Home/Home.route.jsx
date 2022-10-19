@@ -69,7 +69,7 @@ const Home = () => {
                     {items.map(i => (<LessUsedComponents />))}
                 </div>
             </div>
-            <RightNavigation />
+            {/* <LeftDataPanel /> */}
         </div>
     );
 };

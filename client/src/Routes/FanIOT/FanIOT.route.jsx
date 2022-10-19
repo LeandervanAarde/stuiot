@@ -34,29 +34,26 @@ const FanIOT = () => {
         return `${value}speed`;
     }
 
-    const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = useState(false);
     const handleChange = (event) => {
         setChecked(event.target.checked);
     };
 
     const [fanSpeed, setFanSpeed] = useState(0);
-    const [fanState, setFanState] = useState(false);
+    const [fanState, setFanState] = useState(true);
 
     useEffect(() => {
         axios.get('http://localhost/api/getFan/')
             .then((res) => {
-                if (!res.data) {
-                    alert('Bad request');
-                } else {
-                    console.log(res.data);
-                    setFanSpeed(res.data.fanSpeed)
-                    setFanState(res.data.fanState)
-                }
+
+                setFanSpeed(res.data.fanSpeed)
+                setFanState(res.data.relay)
+                setChecked(res.data.relay)
+
             })
             .catch(function (error) {
-                // console.log(error);
+                console.log(error);
             })
-
     }, [])
 
 
@@ -79,7 +76,7 @@ const FanIOT = () => {
     }
 
     useEffect(() => {
-        console.log("checked");
+        // console.log("checked");
         setFanState(checked);
         updateFan();
     }, [checked])
@@ -103,17 +100,19 @@ const FanIOT = () => {
                         <Switch
                             checked={checked}
                             onChange={handleChange}
-                            inputProps={{ 'aria-label': 'controlled' }}
                         />
+
                         <p>ON</p>
                     </div>
                 </div>
                 <div className={styles.snacks__report__container__daily2}>
                     <h1 className={styles.snacks__report__container__daily2__h2}>Speed Level</h1>
                     <Box sx={{ width: 500 }}>
+
                         <Slider
                             aria-label="Custom marks"
                             defaultValue={0}
+                            value={fanSpeed}
                             getAriaValueText={valuetext}
                             step={1}
                             valueLabelDisplay="auto"

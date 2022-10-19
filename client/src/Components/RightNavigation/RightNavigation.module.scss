@@ -1,17 +1,7 @@
-@import "../../ScssVariables/Variables.scss";
-
-.container{
-    //This will go to the right side once the other containers have been added
-    min-width: 12vw;
-    max-width: 350px !important;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    position: sticky;
-    top: 0;
-    background-color: $background;
-    justify-content: space-around;
-    max-height: 100vh;
-
+.container {
+    display: grid;
+    grid-gap: 16px;
+    font-size: 10px;
+    text-align: center;
+    width: 100px;
 }

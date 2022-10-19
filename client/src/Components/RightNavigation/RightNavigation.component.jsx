@@ -8,7 +8,7 @@ import productivitylockicon from '../../assets/productivityicon.svg';
 import RightContainerItems from '../RightContainerItems/RightContainerItems.component';
 import { useEffect } from 'react';
 
-const RightNavigation = () => {
+const LeftDataPanel = () => {
 
     var totalSeconds = 0;
     // This is the time of dispension
@@ -19,9 +19,9 @@ const RightNavigation = () => {
     const [hours, setHours] = useState(0);
 
     useEffect(() => {
-        
+
         const interval = setInterval(() => {
-            
+
             let currentTime = Math.floor(Date.now() / 1000);
 
             totalSeconds++;
@@ -54,6 +54,7 @@ const RightNavigation = () => {
             status: "Off"
         },
         {
+            // ek gaan ekstra usestates hier moet insit om dit aan/af te laat gaan. ek voel dis bietjie redundant, want ek wys die status op die main page in my div block...
             name: "Fan Status",
             image: fanicon,
             status: "Off"
@@ -79,4 +80,4 @@ const RightNavigation = () => {
     );
 };
 
-export default RightNavigation;
+export default LeftDataPanel;

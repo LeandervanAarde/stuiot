@@ -1,7 +1,7 @@
 
 import './ScssVariables/Variables.scss';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from './Routes/Home/Home.route';
+
 import SnacksIOT from './Routes/SnacksIOT/SnacksIOT.route';
 import FanIOT from './Routes/FanIOT/FanIOT.route';
 // import DrinksIOT from './Routes/DrinksIOT/DrinksIOT.route';
@@ -12,6 +12,7 @@ import SignUp from './Routes/SignUp/SignUp.route';
 import RightNavigation from './components/RightNavigation/RightNavigation.component';
 
 import BubbleChart from './components/BubbleChart/BubbleChart';
+import MainDashboardPage from './Routes/MainPage/MainPage';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <BrowserRouter>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<MainDashboardPage />} />
           <Route path="/SignUp" index element={<SignUp />} />
           <Route path="/stusnacks" index element={<SnacksIOT />} />
           <Route path="/studrinks" index element={<DrinksIOT />} />

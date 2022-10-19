@@ -19,51 +19,67 @@ import axios from 'axios';
 
 const FanIOTChart = () => {
 
-    const [labels, setLabels] = useState();
-    const [datasets, SetDatasets] = useState();
+    const [labels, setLabels] = useState([]);
+    const [dataTempSet, setDataTempset] = useState([]);
+    const [dataHumSet, setDataHumSet] = useState([]);
+
+
 
 
     useEffect(() => {
-        axios.get('http://localhost/api/getTemp/')
-            .then((res) => {
-                if (!res.data) {
-                    alert('Bad request');
-                } else {
-                    console.log(res.data);
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+        const interval = setInterval(() => {
+            axios.get('http://localhost/api/getTemp/')
+                .then((res) => {
+                    if (!res.data) {
+                        alert('Bad request');
+                    } else {
+                        setLabels([])
+
+                        let tempData = []
+                        let humData = []
+                        let totaldata = res.data.slice(Math.max(res.data.length - 50, 0))
+
+                        for (let i = 0; i < totaldata.length; i++) {
+                            const element = totaldata[i];
+                            setLabels(labels => [...labels, totaldata[i].time.slice(11, 16)]);
+                            tempData.push(totaldata[i].temp)
+                            humData.push(totaldata[i].humidity)
+
+                        }
+                        setDataTempset({
+                            label: "Temp",
+                            data: tempData,
+                            fill: true,
+                            // " #51B2C7",
+                            // "#423EF8",
+                            // "#920202"
+                            // backgroundColor: "#51B2C7",
+                            borderColor: "rgba(0,0,255,1)"
+                        })
+                        setDataHumSet({
+                            label: "Humidity",
+                            data: humData,
+                            fill: true,
+                            // " #51B2C7",
+                            // "#423EF8",
+                            // "#920202"
+                            // backgroundColor: "#51B2C7",
+                            borderColor: "rgba(255,0,0,1)"
+                        })
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }, 5000);
 
     }, [])
 
+
+
     const data = {
-        labels: ["37°C", "37°C", "37°C", "Thursday", "Friday", "Saturday", "Sunday"],
-        datasets: [
-            {
-                label: "First dataset",
-                data: [33, 53, 85, 41, 44, 65, 88],
-                fill: true,
-                // " #51B2C7",
-                // "#423EF8",
-                // "#920202"
-                // backgroundColor: "#51B2C7",
-                borderColor: "rgba(75,192,192,1)"
-            },
-            {
-                label: "Second dataset",
-                data: [11, 14, 35, 45, 54, 90, 100],
-                fill: false,
-                borderColor: "#742774"
-            },
-            {
-                label: "Third dataset",
-                data: [20, 30, 40, 51, 60, 76, 120],
-                fill: false,
-                borderColor: "#920202"
-            }
-        ]
+        labels: labels,
+        datasets: [dataTempSet, dataHumSet]
     };
 
 

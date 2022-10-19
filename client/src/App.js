@@ -17,23 +17,18 @@ import MainDashboardPage from './Routes/MainPage/MainPage';
 function App() {
   return (
     <div className={"App"}>
-
-
       <BrowserRouter>
 
         <Routes>
           <Route path="/" element={<MainDashboardPage />} />
-          <Route path="/SignUp" index element={<SignUp />} />
+          {/* <Route path="/SignUp" index element={<SignUp />} />
           <Route path="/stusnacks" index element={<SnacksIOT />} />
           <Route path="/studrinks" index element={<DrinksIOT />} />
           <Route path="/stumaticfan" index element={<FanIOT />} />
           <Route path="/studiolights" index element={<LightsIOT />} />
           <Route path="/productivitytimer" index element={<ProductivityIOT />} />
-          <Route path="/bubbles" index element={<BubbleChart />} />
-
+          <Route path="/bubbles" index element={<BubbleChart />} /> */}
         </Routes>
-        {/* <div className='rightnav'> <RightNavigation /></div> */}
-
       </BrowserRouter>
     </div>
   );

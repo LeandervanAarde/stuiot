@@ -32,7 +32,6 @@ const LightsIOT = () => {
     return (
         <div className={styles.container}>
             <div className={styles.centerContainer}>
-                <h1>STUdio lights</h1>
                 <div className={styles.graphHolder}>
 
                     <GraphContainer
@@ -54,51 +53,31 @@ const LightsIOT = () => {
                         }
                     />
                 </div>
+
                 <div className={styles.controls}>
                     <div className={styles.right}>
-                        <div className={styles.power}>
+                        {/* <div className={styles.power}>
                             <h2>Lights</h2>
-                            <Grid component="label" container alignItems="center" xs={3} className={styles.grid}>
-                                <Grid item><h4>ON</h4></Grid>
-                                <Grid item >
-                                    <Switch color="default" />
-                                </Grid>
-                                <Grid item><h4>OFF</h4></Grid>
-                            </Grid>
-                        </div>
+
+                            <h4>ON</h4>
+                            <Switch color="default" />
+                            <h4>OFF</h4>
+                        </div> */}
 
                         <div className={styles.power}>
-                            <h2>Breathe Effect</h2>
-                            <Grid component="label" container alignItems="center" xs={3} className={styles.grid}>
-                                <Grid item><h4>ON</h4></Grid>
-                                <Grid item >
-                                    <Switch color="default" />
-                                </Grid>
-                                <Grid item><h4>OFF</h4></Grid>
-                            </Grid>
+                            {/* <h2>Breathe Effect</h2>
+
+                            <h4>ON</h4>
+                            <Switch color="default" />
+                            <h4>OFF</h4> */}
+
                         </div>
+
                     </div>
 
-                    <div className={styles.left}>
-                        <AvailableColors
-                            color={'red'}
-                        />
 
-                        <AvailableColors
-                            color={'blue'}
-                        />
-
-                        <AvailableColors
-                            color={'purple'}
-                        />
-
-                        <AvailableColors
-                            color={'green'}
-                        />
-                    </div>
                 </div>
             </div>
-            <RightNavigation />
         </div>
     );
 };

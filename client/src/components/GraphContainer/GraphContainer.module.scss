@@ -1,12 +1,12 @@
 @import "../../ScssVariables/Variables.scss";
 
 
-.container{
+.container {
     display: flex;
     background-color: $black;
     padding: 15px;
-    width: 100%;
-    max-width: 920px;
+
+
     // height: 43vh; //THIS WAS THE ORIGINAL HEIGHT
 
     //Tsebo Tweaking stuff
@@ -14,7 +14,5 @@
     // height: 200vh;
     border-radius: 5px;
     // background-color: red;
-    
+
 }
-
-

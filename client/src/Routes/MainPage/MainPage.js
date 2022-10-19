@@ -4,11 +4,19 @@ import '../../main scss/mainPage.scss';
 import LeftDataPanel from '../../components/RightNavigation/RightNavigation.component';
 import FanIOTChart from '../FanIOT/FanIOTChart';
 import FanIOT from '../FanIOT/FanIOT.route';
-
-
+import DrinksIOT from '../DrinksIOT/DrinksIOT';
+import Button from '@mui/material/Button';
+import SnacksIOTChart from '../SnacksIOT/SnacksIOTLinechart';
+import SnacksIOT from '../SnacksIOT/SnacksIOT.route';
+import LightsIOT from '../LightsIOT/LightsIOT.route';
+import { Switch } from '@mui/material';
+import AvailableColors from '../../components/AvailableColors/AvailableColors.component';
 
 const MainDashboardPage = () => {
-
+    // GUYS
+    // some of your code was really encapsulated way too far. It was also taking styles from each other?
+    // Here you'll put your SWITCH's functions in, same as you would on your individual pages.
+    // Had a contact session with Leo about this. 
     return (
         <div className='mainpage'>
             <div className='mainpage__grid'>
@@ -24,12 +32,12 @@ const MainDashboardPage = () => {
 
                 <div className='mainpage__grid__toprow'>
                     <div className='mainpage__grid__toprow__studrinks'>
-                        studrinks div
                         <div className='mainpage__grid__toprow__studrinks__graph'>
-
+                            <DrinksIOT />
                         </div>
                         <div className='mainpage__grid__toprow__studrinks__controls'>
-                            {/* graph here */}
+                            <Button variant="outlined">Dispense</Button>
+                            <Button variant="contained">Dispense</Button>
                         </div>
                     </div>
 
@@ -44,12 +52,23 @@ const MainDashboardPage = () => {
                     </div>
 
                     <div className='mainpage__grid__toprow__stusnacks'>
-                        snack div
-                        <div className='mainpage__grid__toprow__stusnacks__graph'>
 
+                        <div className='mainpage__grid__toprow__stusnacks__graph'>
+                            <SnacksIOTChart />
                         </div>
                         <div className='mainpage__grid__toprow__stusnacks__controls'>
-                            {/* graph here */}
+                            <div className='mainpage__grid__toprow__stusnacks__controls__buttons'>
+                                <Button variant="outlined">Dispense</Button>
+                                <Button variant="contained" style={{ backgroundColor: '#23257A' }}>Dispense</Button>
+                            </div>
+                            <div className='mainpage__grid__toprow__stusnacks__controls__switch'>
+                                <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>Daily</p>
+                                <Switch
+
+                                />
+                                <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>Hourly</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -58,7 +77,37 @@ const MainDashboardPage = () => {
             </div>
             <div className='mainpage__bottomrow'>
                 <div className='mainpage__bottomrow__studiolights'>
-                    light
+                    <LightsIOT />
+                    <div className='mainpage__bottomrow__studiolights__circles'>
+                        <AvailableColors
+                            color={'red'}
+                        />
+
+                        <AvailableColors
+                            color={'blue'}
+                        />
+
+                        <AvailableColors
+                            color={'purple'}
+                        />
+
+                        <AvailableColors
+                            color={'green'}
+                        />
+                    </div>
+                    <div className='mainpage__bottomrow__studiolights__controls'>
+                        <p style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', }}>Lights</p>
+                        <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>ON</p>
+                        <Switch />
+                        <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>OFF</p>
+                    </div>
+                    <div className='mainpage__bottomrow__studiolights__breathecontrol'>
+                        <p style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', }}>
+                            Breathe Effect</p>
+                        <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>ON</p>
+                        <Switch />
+                        <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>OFF</p>
+                    </div>
                 </div>
                 <div className='mainpage__bottomrow__stulock'>
                     stu lock div

@@ -41,14 +41,27 @@
                 background-color: #30353D;
                 border-radius: 20px;
                 display: grid;
-                grid-template-rows: 220px auto;
+                grid-template-rows: 210px auto;
 
                 &__graph {
-                    padding: 8px;
-                    background-color: aliceblue;
+                    margin-top: 8px;
+                    padding: 16px;
+                    margin-left: 8px;
+                    height: 190px !important;
+                    width: 350px;
+                    border-radius: 5px;
+                    background-color: #091113;
                 }
 
-                &__controls {}
+                &__controls {
+                    padding-top: 32px;
+                    display: grid;
+                    grid-template-columns: 100px 100px;
+                    width: auto;
+                    height: 30px;
+                    grid-gap: 16px;
+                    justify-content: center;
+                }
             }
 
             &__stumaticfan {
@@ -60,12 +73,18 @@
                 grid-template-rows: 220px auto;
 
                 &__graph {
+                    margin-left: 8px;
+                    margin-top: 8px;
+                    height: 205px;
+                    width: 365px;
                     padding: 8px;
-
+                    background-color: #091113;
+                    border-radius: 5px;
                 }
 
                 &__controls {
                     padding-left: 40px;
+                    padding-top: 8px;
                 }
             }
 
@@ -78,12 +97,40 @@
                 grid-template-rows: 220px auto;
 
                 &__graph {
+                    margin-left: 8px;
+                    margin-top: 8px;
+                    height: 205px;
+                    width: 365px;
                     padding: 8px;
-                    background-color: aliceblue;
+                    background-color: #091113;
+                    border-radius: 5px;
                 }
 
                 &__controls {
                     padding: 24px;
+                    display: grid;
+                    grid-template-rows: 50px 40px;
+
+                    &__buttons {
+                        display: grid;
+                        grid-template-columns: 100px 100px;
+                        width: auto;
+                        height: 30px;
+                        grid-gap: 16px;
+                        justify-content: center;
+
+                    }
+
+                    &__switch {
+                        display: grid;
+                        grid-template-rows: 1fr;
+                        grid-template-columns: 30px 50px 30px;
+                        width: auto;
+                        height: 30px;
+                        justify-content: center;
+                        align-items: center;
+
+                    }
                 }
             }
         }
@@ -103,9 +150,41 @@
             height: 330px;
             background-color: #30353D;
             border-radius: 20px;
+            display: grid;
+            grid-template-columns: 200px 200px 100px 100px;
+
+
+            &__circles {
+                width: 50px;
+                display: grid;
+                grid-template-columns: 40px 40px 40px 40px;
+                grid-gap: 16px;
+                padding: 32px;
+                padding-left: 380px;
+            }
+
+            &__controls {
+                display: grid;
+                grid-template-columns: 90px 50px 60px 20px;
+                align-items: center;
+                padding-left: 150px;
+                margin-top: -100px;
+            }
+
+            &__breathecontrol {
+                display: grid;
+                grid-template-columns: 100px 50px 60px 20px;
+                align-items: center;
+                padding-top: 80px;
+                padding-left: 50px;
+            }
+
+
+
         }
 
         &__stulock {
+
             width: 400px;
             height: 330px;
             background-color: #30353D;

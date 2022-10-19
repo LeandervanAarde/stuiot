@@ -1,34 +1,30 @@
-@import "../../ScssVariables/Variables.scss";
+// @import "../../ScssVariables/Variables.scss";
 
-.right{
-    width: 100%;
-    // background: red;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: space-evenly;
-}
+// .right {
+//     width: 100%;
+//     // background: red;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 15px;
+//     justify-content: space-evenly;
+// }
 
 
-.centerContainer {
-    flex: 1;
-    padding: 2%;
-    display: flex;
-    min-width: 940px;
-    flex-direction: column;
-    gap: 40px;
-    max-height: 95vh;
-    padding: 30px;
-    // border-radius: 105px;
-    // background-color: red;
-    h2{
-        color: white;
-        margin: 0;
-    }
+// .centerContainer {
 
-    .graphHolder{
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
-}
+//     gap: 40px;
+//     max-height: 95vh;
+
+//     // border-radius: 105px;
+//     // background-color: red;
+//     h2 {
+//         color: white;
+//         margin: 0;
+//     }
+
+//     .graphHolder {
+//         display: flex;
+//         gap: 20px;
+//         justify-content: center;
+//     }
+// }

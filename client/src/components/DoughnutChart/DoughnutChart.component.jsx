@@ -50,7 +50,7 @@ const DoughnutChart = ({ labels, data, item }) => {
                         position: "top",
                         color: "white",
                         font: {
-                            size: 24,
+                            size: 12,
                             weight: "bold",
 
                         }

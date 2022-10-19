@@ -13,19 +13,19 @@ const FanIOT = () => {
     const marks = [
         {
             value: 0,
-            label: 'OFF',
+            label: 'Off',
         },
         {
             value: 10,
-            label: 'SLOW',
+            label: 'Slow',
         },
         {
             value: 30,
-            label: 'MEDIUM',
+            label: 'Medium',
         },
         {
             value: 60,
-            label: 'FAST',
+            label: 'Fast',
         }]
 
     function valuetext(value) {
@@ -83,11 +83,11 @@ const FanIOT = () => {
         <div style={{ height: "100px" }}>
 
             <div className='controls' style={{ display: 'grid', gridTemplateColumns: '20px 50px 50px', alignItems: 'center' }}>
-                <p style={{ fontSize: '10px', color: 'white' }}>OFF</p>
+                <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>OFF</p>
                 <Switch
                     checked={checked}
-                    onChange={handleChange}
-                /> <p style={{ fontSize: '10px', color: 'white' }}>ON</p>
+                    onChange={handleChange} />
+                <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>ON</p>
             </div>
 
 

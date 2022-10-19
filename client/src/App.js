@@ -10,7 +10,7 @@ import LightsIOT from './Routes/LightsIOT/LightsIOT.route';
 import ProductivityIOT from './Routes/ProductivityIOT/ProductivityIOT.route';
 import SignUp from './Routes/SignUp/SignUp.route';
 import RightNavigation from './components/RightNavigation/RightNavigation.component';
-import NavigationPanel from './components/Navigation/Navigation.components';
+
 import BubbleChart from './components/BubbleChart/BubbleChart';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
 
       <BrowserRouter>
-        <NavigationPanel />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignUp" index element={<SignUp />} />

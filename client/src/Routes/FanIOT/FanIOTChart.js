@@ -9,10 +9,37 @@
 
 import React from 'react';
 import { Line } from "react-chartjs-2";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
+
+
+
 
 const FanIOTChart = () => {
+
+    const [labels, setLabels] = useState();
+    const [datasets, SetDatasets] = useState();
+
+
+    useEffect(() => {
+        axios.get('http://localhost/api/getTemp/')
+            .then((res) => {
+                if (!res.data) {
+                    alert('Bad request');
+                } else {
+                    console.log(res.data);
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+    }, [])
+
     const data = {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        labels: ["37°C", "37°C", "37°C", "Thursday", "Friday", "Saturday", "Sunday"],
         datasets: [
             {
                 label: "First dataset",

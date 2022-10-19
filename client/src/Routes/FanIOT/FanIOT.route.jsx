@@ -45,11 +45,9 @@ const FanIOT = () => {
     useEffect(() => {
         axios.get('http://localhost/api/getFan/')
             .then((res) => {
-
                 setFanSpeed(res.data.fanSpeed)
                 setFanState(res.data.relay)
                 setChecked(res.data.relay)
-
             })
             .catch(function (error) {
                 console.log(error);
@@ -82,46 +80,29 @@ const FanIOT = () => {
     }, [checked])
 
     return (
-        <div className={styles.snacks}>
-            <div className={styles.snacks__container}>
-                <div className={styles.snacks__container__snacksgraph}>
-                    {/* Snacks graph here */}
-                    <FanIOTChart />
-                </div>
-            </div>
-            <div style={{ paddingTop: "32px" }}>
-                <RightNavigation />
-            </div>
-            <div className={styles.snacks__report__container}>
-                <div className={styles.snacks__report__container__daily}>
-                    <h1 className={styles.snacks__report__container__daily__h1}>FAN</h1>
-                    <div className={styles.snacks__report__container__daily__controls}>
-                        <p>OFF</p>
-                        <Switch
-                            checked={checked}
-                            onChange={handleChange}
-                        />
+        <div style={{ height: "100px" }}>
 
-                        <p>ON</p>
-                    </div>
-                </div>
-                <div className={styles.snacks__report__container__daily2}>
-                    <h1 className={styles.snacks__report__container__daily2__h2}>Speed Level</h1>
-                    <Box sx={{ width: 500 }}>
-
-                        <Slider
-                            aria-label="Custom marks"
-                            defaultValue={0}
-                            value={fanSpeed}
-                            getAriaValueText={valuetext}
-                            step={1}
-                            valueLabelDisplay="auto"
-                            max={60}
-                            marks={marks}
-                        />
-                    </Box>
-                </div>
+            <div className='controls' style={{ display: 'grid', gridTemplateColumns: '20px 50px 50px', alignItems: 'center' }}>
+                <p style={{ fontSize: '10px', color: 'white' }}>OFF</p>
+                <Switch
+                    checked={checked}
+                    onChange={handleChange}
+                /> <p style={{ fontSize: '10px', color: 'white' }}>ON</p>
             </div>
+
+
+            <Box sx={{ width: 300 }}>
+                <Slider
+                    aria-label="Custom marks"
+                    defaultValue={0}
+                    value={fanSpeed}
+                    getAriaValueText={valuetext}
+                    step={1}
+                    valueLabelDisplay="auto"
+                    max={60}
+                    marks={marks}
+                />
+            </Box>
         </div >
     );
 };

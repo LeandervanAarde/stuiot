@@ -8,7 +8,8 @@
         display: grid;
         padding-left: 16px;
         grid-template-columns: 100px 300px 300px 300px;
-        grid-template-rows: 345px;
+        // height between rows
+        grid-template-rows: 370px;
 
         &__leftpanel {
             display: grid;
@@ -17,6 +18,12 @@
             align-items: center;
             justify-content: center;
             justify-items: center;
+            grid-gap: 24px;
+            padding-top: 24px;
+
+            &__panel {
+                padding-top: 40px;
+            }
         }
 
         &__toprow {
@@ -33,6 +40,15 @@
                 height: 330px;
                 background-color: #30353D;
                 border-radius: 20px;
+                display: grid;
+                grid-template-rows: 220px auto;
+
+                &__graph {
+                    padding: 8px;
+                    background-color: aliceblue;
+                }
+
+                &__controls {}
             }
 
             &__stumaticfan {
@@ -40,6 +56,17 @@
                 height: 330px;
                 background-color: #30353D;
                 border-radius: 20px;
+                display: grid;
+                grid-template-rows: 220px auto;
+
+                &__graph {
+                    padding: 8px;
+
+                }
+
+                &__controls {
+                    padding-left: 40px;
+                }
             }
 
             &__stusnacks {
@@ -47,6 +74,17 @@
                 height: 330px;
                 background-color: #30353D;
                 border-radius: 20px;
+                display: grid;
+                grid-template-rows: 220px auto;
+
+                &__graph {
+                    padding: 8px;
+                    background-color: aliceblue;
+                }
+
+                &__controls {
+                    padding: 24px;
+                }
             }
         }
     }

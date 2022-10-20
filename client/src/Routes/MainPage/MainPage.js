@@ -37,7 +37,7 @@ const MainDashboardPage = () => {
                         </div>
                         <div className='mainpage__grid__toprow__studrinks__controls'>
                             <Button variant="outlined">Dispense</Button>
-                            <Button variant="contained">Dispense</Button>
+                            <Button variant="contained" style={{ backgroundColor: '#23257A' }}>Dispense</Button>
                         </div>
                     </div>
 

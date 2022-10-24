@@ -11,6 +11,7 @@ import SnacksIOT from '../SnacksIOT/SnacksIOT.route';
 import LightsIOT from '../LightsIOT/LightsIOT.route';
 import { Switch } from '@mui/material';
 import AvailableColors from '../../components/AvailableColors/AvailableColors.component';
+import BarGraph from '../../components/BarGraph/BarGraph.component';
 
 const MainDashboardPage = () => {
     // GUYS
@@ -63,9 +64,7 @@ const MainDashboardPage = () => {
                             </div>
                             <div className='mainpage__grid__toprow__stusnacks__controls__switch'>
                                 <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>Daily</p>
-                                <Switch
-
-                                />
+                                <Switch />
                                 <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>Hourly</p>
                             </div>
 
@@ -110,7 +109,26 @@ const MainDashboardPage = () => {
                     </div>
                 </div>
                 <div className='mainpage__bottomrow__stulock'>
-                    stu lock div
+                    <div className='mainpage__bottomrow__stulock__graph'>
+                        <BarGraph />
+                    </div>
+                    <div className='mainpage__bottomrow__stulock__buttons'>
+                        <Button variant="contained" style={{ backgroundColor: '#23257A' }}>Start Timer</Button>
+                        <div className='switchContainer'>
+                            <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>ON</p>
+                            <Switch />
+                            <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>OFF</p>
+                        </div>
+                    </div>
+
+                    <div className='mainpage__bottomrow__stulock__timer'>
+                            <input type={"text"} placeholder={"00"}></input>
+                            <h4>:</h4>
+                            <input type={"text"} placeholder={"00"}></input>
+                            <h4>:</h4>
+                            <input type={"text"} placeholder={"00"}></input>
+                    </div>
+
                 </div>
             </div>
 

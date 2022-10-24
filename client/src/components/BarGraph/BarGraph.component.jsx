@@ -21,8 +21,7 @@ const BarGraph = ({ labels, data, title }) => {
                 }
             ],
 
-        }} 
-        
+        }}
             options={{
                 responsive: true,
                 maintainAspectRatio: true,

@@ -33,15 +33,6 @@ const LightsIOT = () => {
         <div className={styles.container}>
             <div className={styles.centerContainer}>
                 <div className={styles.graphHolder}>
-
-                    <GraphContainer
-                        id={styles.resize}
-                        children={
-                            <PolarRadar
-                                labels={testerData.map(i => i.name)}
-                                data={testerData.map(i => i.data)}
-                            />} />
-
                     <GraphContainer
                         id={styles.resize}
                         children={
@@ -52,30 +43,6 @@ const LightsIOT = () => {
                             />
                         }
                     />
-                </div>
-
-                <div className={styles.controls}>
-                    <div className={styles.right}>
-                        {/* <div className={styles.power}>
-                            <h2>Lights</h2>
-
-                            <h4>ON</h4>
-                            <Switch color="default" />
-                            <h4>OFF</h4>
-                        </div> */}
-
-                        <div className={styles.power}>
-                            {/* <h2>Breathe Effect</h2>
-
-                            <h4>ON</h4>
-                            <Switch color="default" />
-                            <h4>OFF</h4> */}
-
-                        </div>
-
-                    </div>
-
-
                 </div>
             </div>
         </div>

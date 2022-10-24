@@ -78,7 +78,7 @@ router.get('/api/getFan/', async (req, res) => {
         console.log("New entity");
         const newValue = new fanState({
             relay: false,
-            fanSpeed: 0
+            fanSpeed: 10
         });
         console.log(newValue);
         newValue.save()

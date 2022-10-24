@@ -54,7 +54,7 @@ const FanIOTChart = () => {
                             // "#423EF8",
                             // "#920202"
                             // backgroundColor: "#51B2C7",
-                            borderColor: "rgba(0,0,255,1)"
+                            borderColor: "#71FEF2"
                         })
                         setDataHumSet({
                             label: "Humidity",
@@ -64,7 +64,7 @@ const FanIOTChart = () => {
                             // "#423EF8",
                             // "#920202"
                             // backgroundColor: "#51B2C7",
-                            borderColor: "rgba(255,0,0,1)"
+                            borderColor: "#BE76FC"
                         })
                     }
                 })

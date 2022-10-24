@@ -22,20 +22,15 @@ const SnacksIOTChart = () => {
                 // "#423EF8",
                 // "#920202"
                 // backgroundColor: "#51B2C7",
-                borderColor: "rgba(75,192,192,1)"
+                borderColor: "#71FEF2"
             },
             {
                 label: "Second dataset",
                 data: [11, 14, 35, 45, 54, 90, 100],
                 fill: false,
-                borderColor: "#742774"
+                borderColor: "#BE76FC"
             },
-            {
-                label: "Third dataset",
-                data: [20, 30, 40, 51, 60, 76, 120],
-                fill: false,
-                borderColor: "#920202"
-            }
+
         ]
     };
 

@@ -1,28 +1,59 @@
 import React from 'react';
-import styles from "./SnacksIOT.module.scss";
-// import SnacksIOTChart from './SnacksIOTLinechart';
-import RightNavigation from '../../components/RightNavigation/RightNavigation.component';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import { Switch, Grid, Button } from '@mui/material';
-
-// 091113 div container color
+import { Button, linearProgressClasses } from '@mui/material';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
+import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
+import '../../main scss/mainPage.scss';
 const SnacksIOT = () => {
+    const [dispensingState, setDispensingState] = useState(true)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            axios.get('http://localhost/api/getDispenserState/')
+                .then((res) => {
+                    // console.log(res.data);
+                    setDispensingState(res.data.dispensing)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }, 5000);
+
+    }, [])
+
+    const alertActive = () => {
+        setDispensingState(true);
+
+        let payloadData = {
+            dispensing: true,
+        }
+
+        console.log("loggin");
+        axios.patch('http://localhost/api/updateDispenserState/', payloadData).then((res) => {
+            if (res) {
+                console.log("Dispensed clicked");
+            }
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     return (
-        <div style={{ height: "100px" }}>
-
-
-            <div className='controls' style={{ display: 'grid', gridTemplateColumns: '20px 50px 50px', alignItems: 'center' }}>
-                {/* <p>Daily</p>
-                <Switch color="default" />
-                <p>Hourly</p> */}
-
+        <>
+            <Button variant="contained" style={{ backgroundColor: '#23257A' }} onClick={() => alertActive()}>Dispense</Button>
+            <div className='dispensing'>
+                {!dispensingState ? (
+                    <div className='dispensing__alert'>
+                        < ReportProblemOutlinedIcon />
+                    </div>
+                ) : (
+                    <div className='dispensing__alertactive'>
+                        < ReportProblemOutlinedIcon />
+                    </div>
+                )}
             </div>
-
-
-
-
-        </div >
+        </>
     );
-};
+}
 
 export default SnacksIOT;

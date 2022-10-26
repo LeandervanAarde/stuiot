@@ -189,7 +189,7 @@
             height: 330px;
             background-color: #30353D;
             border-radius: 20px;
-        
+
 
             &__graph {
                 margin-left: 8px;
@@ -200,28 +200,32 @@
                 background-color: #091113;
                 border-radius: 5px;
             }
-            &__buttons{
+
+            &__buttons {
                 width: 40%;
                 height: 15%;
                 padding: 20px;
                 float: left;
-            
-                .switchContainer{
+
+                .switchContainer {
                     padding-top: 10px;
                     display: flex;
                 }
             }
-            &__timer{
+
+            &__timer {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 15px;
-                h4{
+
+                h4 {
                     text-align: center;
                     color: white;
-                    
+
                 }
-                input{
+
+                input {
                     width: 10%;
                     background-color: transparent;
                     border: none;
@@ -232,4 +236,25 @@
         }
     }
 
+}
+
+.dispensing {
+    display: grid;
+    grid-template-columns: 100px;
+    width: 400px;
+    align-items: center;
+
+    &__alert {
+        display: grid;
+        height: 20px !important;
+        padding-left: 80px;
+
+    }
+
+    &__alertactive {
+        display: grid;
+        height: 20px !important;
+        padding-left: 80px;
+        color: aqua !important;
+    }
 }

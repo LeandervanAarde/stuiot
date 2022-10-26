@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const fanRoute = require('./routes/fanRoute');
 const leds = require('./routes/led')
+const snackDispenserRoute = require('./routes/snackDispenserRoute.js')
 const cors = require('cors');
 require('dotenv/config');
 const app = express();
@@ -15,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(fanRoute);
 app.use(leds)
-
+app.use(snackDispenserRoute);
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

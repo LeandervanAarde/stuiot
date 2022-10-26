@@ -11,7 +11,7 @@ const SnacksIOT = () => {
         const interval = setInterval(() => {
             axios.get('http://localhost/api/getDispenserState/')
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     setDispensingState(res.data.dispensing)
                 })
                 .catch(function (error) {

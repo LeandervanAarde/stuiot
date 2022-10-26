@@ -30,24 +30,30 @@ const FanIOT = () => {
 
     function valuetext(value) {
         setFanSpeed(value);
+        console.log(value);
         updateFan()
         return `${value}speed`;
     }
 
-    const [checked, setChecked] = useState(false);
+    // function valuetext(value) {
+    //     return `${value}°C`;
+    // }
+
+
     const handleChange = (event) => {
-        setChecked(event.target.checked);
+        setFanState(event.target.checked);
     };
 
     const [fanSpeed, setFanSpeed] = useState(0);
-    const [fanState, setFanState] = useState(true);
+    const [fanState, setFanState] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost/api/getFan/')
             .then((res) => {
+                console.log(res.data);
                 setFanSpeed(res.data.fanSpeed)
                 setFanState(res.data.relay)
-                setChecked(res.data.relay)
+
             })
             .catch(function (error) {
                 console.log(error);
@@ -66,36 +72,35 @@ const FanIOT = () => {
                 if (!res.data) {
                     alert('Bad request');
                 } else {
-
                 }
             })
             .catch(function (error) {
+                console.log(error);
             })
     }
 
     useEffect(() => {
-        // console.log("checked");
-        setFanState(checked);
         updateFan();
-    }, [checked])
+    }, [fanState])
 
     return (
         <div style={{ height: "100px" }}>
-
             <div className='controls' style={{ display: 'grid', gridTemplateColumns: '20px 50px 50px', alignItems: 'center' }}>
-                <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>OFF</p>
+                <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>
+                    OFF
+                </p>
                 <Switch
-                    checked={checked}
+                    checked={fanState}
                     onChange={handleChange} />
-                <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>ON</p>
+                <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>
+                    ON
+                </p>
             </div>
-
 
             <Box sx={{ width: 300 }}>
                 <Slider
-                    aria-label="Custom marks"
-                    defaultValue={0}
-                    value={fanSpeed}
+                    aria-label="Speed"
+                    defaultValue={fanSpeed}
                     getAriaValueText={valuetext}
                     step={1}
                     valueLabelDisplay="auto"

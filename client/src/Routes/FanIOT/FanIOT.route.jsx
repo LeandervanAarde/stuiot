@@ -100,7 +100,7 @@ const FanIOT = () => {
             <Box sx={{ width: 300 }}>
                 <Slider
                     aria-label="Speed"
-                    defaultValue={fanSpeed}
+                    defaultValue={0}
                     getAriaValueText={valuetext}
                     step={1}
                     valueLabelDisplay="auto"

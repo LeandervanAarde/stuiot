@@ -14,10 +14,7 @@ import AvailableColors from '../../components/AvailableColors/AvailableColors.co
 import BarGraph from '../../components/BarGraph/BarGraph.component';
 
 const MainDashboardPage = () => {
-    // GUYS
-    // some of your code was really encapsulated way too far. It was also taking styles from each other?
-    // Here you'll put your SWITCH's functions in, same as you would on your individual pages.
-    // Had a contact session with Leo about this. 
+
     return (
         <div className='mainpage'>
             <div className='mainpage__grid'>
@@ -60,13 +57,9 @@ const MainDashboardPage = () => {
                         <div className='mainpage__grid__toprow__stusnacks__controls'>
                             <div className='mainpage__grid__toprow__stusnacks__controls__buttons'>
                                 {/* <Button variant="outlined">Dispense</Button> */}
-                                <Button variant="contained" style={{ backgroundColor: '#23257A' }}>Dispense</Button>
+                                <SnacksIOT />
                             </div>
-                            <div className='mainpage__grid__toprow__stusnacks__controls__switch'>
-                                <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>Daily</p>
-                                <Switch />
-                                <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>Hourly</p>
-                            </div>
+
 
                         </div>
                     </div>
@@ -122,11 +115,11 @@ const MainDashboardPage = () => {
                     </div>
 
                     <div className='mainpage__bottomrow__stulock__timer'>
-                            <input type={"text"} placeholder={"00"}></input>
-                            <h4>:</h4>
-                            <input type={"text"} placeholder={"00"}></input>
-                            <h4>:</h4>
-                            <input type={"text"} placeholder={"00"}></input>
+                        <input type={"text"} placeholder={"00"}></input>
+                        <h4>:</h4>
+                        <input type={"text"} placeholder={"00"}></input>
+                        <h4>:</h4>
+                        <input type={"text"} placeholder={"00"}></input>
                     </div>
 
                 </div>

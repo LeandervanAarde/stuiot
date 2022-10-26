@@ -4,7 +4,7 @@ const addTempReading = require('../models/addTempReading');
 const fanState = require('../models/fanState');
 const router = express();
 
-router.post('/api/addTemp', (req, res) => {
+router.post('/api/addTemp/', (req, res) => {
     const newValue = new addTempReading({
         temp: req.body.temp,
         humidity: req.body.humidity,

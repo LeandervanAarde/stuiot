@@ -20,7 +20,7 @@ app.use(snackDispenserRoute);
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // dbName: 'stuDB',
+    dbName: 'stuDB',
 }).then(() => console.log("Connection Successful to stuDB (STU Database)"))
     .catch((err) => {
         console.log("No Connection. Reason: " + err);

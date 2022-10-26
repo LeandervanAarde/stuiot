@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const fanRoute = require('./routes/fanRoute');
+const leds = require('./routes/led')
 const cors = require('cors');
 require('dotenv/config');
 const app = express();
@@ -13,11 +14,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(fanRoute);
+app.use(leds)
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'stuDB',
+    // dbName: 'stuDB',
 }).then(() => console.log("Connection Successful to stuDB (STU Database)"))
     .catch((err) => {
         console.log("No Connection. Reason: " + err);

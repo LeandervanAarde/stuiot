@@ -12,6 +12,7 @@ import LightsIOT from '../LightsIOT/LightsIOT.route';
 import { Switch } from '@mui/material';
 import AvailableColors from '../../components/AvailableColors/AvailableColors.component';
 import BarGraph from '../../components/BarGraph/BarGraph.component';
+import Lights from '../../components/Lights/Lights.component';
 
 const MainDashboardPage = () => {
     // GUYS
@@ -75,39 +76,7 @@ const MainDashboardPage = () => {
 
             </div>
             <div className='mainpage__bottomrow'>
-                <div className='mainpage__bottomrow__studiolights'>
-                    <LightsIOT />
-                    <div className='mainpage__bottomrow__studiolights__circles'>
-                        <AvailableColors
-                            color={'red'}
-                        />
-
-                        <AvailableColors
-                            color={'blue'}
-                        />
-
-                        <AvailableColors
-                            color={'purple'}
-                        />
-
-                        <AvailableColors
-                            color={'green'}
-                        />
-                    </div>
-                    <div className='mainpage__bottomrow__studiolights__controls'>
-                        <p style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', }}>Lights</p>
-                        <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>ON</p>
-                        <Switch />
-                        <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>OFF</p>
-                    </div>
-                    <div className='mainpage__bottomrow__studiolights__breathecontrol'>
-                        <p style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', }}>
-                            Breathe Effect</p>
-                        <p style={{ fontSize: '10px', color: 'white', fontWeight: 'bold' }}>ON</p>
-                        <Switch />
-                        <p style={{ fontSize: '10px', color: 'white', paddingLeft: '8px', fontWeight: 'bold' }}>OFF</p>
-                    </div>
-                </div>
+                <Lights />
                 <div className='mainpage__bottomrow__stulock'>
                     <div className='mainpage__bottomrow__stulock__graph'>
                         <BarGraph />
@@ -122,11 +91,11 @@ const MainDashboardPage = () => {
                     </div>
 
                     <div className='mainpage__bottomrow__stulock__timer'>
-                            <input type={"text"} placeholder={"00"}></input>
-                            <h4>:</h4>
-                            <input type={"text"} placeholder={"00"}></input>
-                            <h4>:</h4>
-                            <input type={"text"} placeholder={"00"}></input>
+                        <input type={"text"} placeholder={"00"}></input>
+                        <h4>:</h4>
+                        <input type={"text"} placeholder={"00"}></input>
+                        <h4>:</h4>
+                        <input type={"text"} placeholder={"00"}></input>
                     </div>
 
                 </div>

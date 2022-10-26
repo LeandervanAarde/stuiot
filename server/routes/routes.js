@@ -68,8 +68,6 @@ router.patch('/api/updateLed/:name', async (req, res) => {
         );
         res.json(findLed);
     }
-
-
 })
 // LED
 router.get('/api/getLed/:name', async (req, res) => {

@@ -18,7 +18,6 @@ const SnacksIOTChart = () => {
                         alert('Bad request');
                     } else {
                         setLabels([])
-                        console.log(res.data);
 
                         let dataVolume = []
                         let dataDispense = []

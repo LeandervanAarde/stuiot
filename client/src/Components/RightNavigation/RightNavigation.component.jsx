@@ -7,18 +7,31 @@ import lightsicon from '../../assets/lightsicon.svg';
 import productivitylockicon from '../../assets/productivityicon.svg';
 import RightContainerItems from '../RightContainerItems/RightContainerItems.component';
 import { useEffect } from 'react';
+import axios from 'axios'
 
 const LeftDataPanel = () => {
+    const name = "LeandervanAarde"
 
     var totalSeconds = 0;
     // This is the time of dispension
     var dispensedTime = 1665055907;
+    const [lightStatus, setLightStatus] = useState(false)
 
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0)
     const [hours, setHours] = useState(0);
 
     useEffect(() => {
+
+        axios.get(`http://localhost/api/getLed/${name}`)
+        .then(res => {
+            console.log(res.data)
+            setLightStatus(res.data.state)
+            // console.log
+        })
+        .catch(err => {
+            console.log(err)
+        })
 
         const interval = setInterval(() => {
 
@@ -39,7 +52,8 @@ const LeftDataPanel = () => {
         }, 1000);
 
         return () => clearInterval(interval)
-    }, []);
+
+    }, [lightStatus]);
 
 
     const Items = [
@@ -51,7 +65,7 @@ const LeftDataPanel = () => {
         {
             name: "Light Status",
             image: lightsicon,
-            status: "Off"
+            status: lightStatus ? "ON" : "OFF"
         },
         {
             // ek gaan ekstra usestates hier moet insit om dit aan/af te laat gaan. ek voel dis bietjie redundant, want ek wys die status op die main page in my div block...

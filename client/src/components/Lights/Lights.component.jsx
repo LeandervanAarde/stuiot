@@ -4,6 +4,8 @@ import LightsIOT from '../../Routes/LightsIOT/LightsIOT.route';
 import styles from "./Lights.module.scss"
 import AvailableColors from "../AvailableColors/AvailableColors.component";
 import Button from '@mui/material/Button';
+import GraphContainer from "../GraphContainer/GraphContainer.component";
+import DoughnutChart from "../DoughnutChart/DoughnutChart.component";
 
 var led = false
 const name = "LeandervanAarde"
@@ -16,12 +18,9 @@ const defaultFormValues = {
 const Lights = () => {
     const [values, setValues] = useState(defaultFormValues)
     const { Red, Green, Blue, Alpha } = values
-    const [newVals, setNewVals] = useState()
     const [on, setOn] = useState(true)
-    const [onTime, setOnTime] = useState()
-    const [offTime, setOffTime] = useState()
-    const currentTime = Math.floor(Date.now() / 1000)
-    const [colour, setColour] = useState()
+    const [timeOn, setTimeOn] = useState()
+    const [timeOff, setTimeOff] = useState()
 
     const newColours = [
         { color: 'red', red: 255, green: 0, blue: 0, alpha: 1 },
@@ -32,10 +31,33 @@ const Lights = () => {
     ]
 
     useEffect(() => {
-        axios.get(`http://localhost:80/api/getLed/${name}`)
+
+        let payload = {
+            name: "LeandervanAarde",
+            state: true,
+            // color: {type: String, default: "RED"},
+            red:  255,
+            green: 0,
+            blue: 0,
+        }
+        axios.post(`http://localhost/api/addLed/${name}`, payload)
+                .then(res => {
+                    console.log(res.data)
+                    // setOn(res.data.state)
+                    // console.log
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+
+
+        axios.get(`http://localhost/api/getLed/${name}`)
             .then(res => {
                 console.log(res.data)
-                setOn(res.data.state)
+                // setOn(res.data.state)
+                // console.log
+                setTimeOn(Math.floor(res.data.timeOn / 60))
+                setTimeOff(Math.floor(timeOn) - 1440)
             })
             .catch(err => {
                 console.log(err)
@@ -46,17 +68,8 @@ const Lights = () => {
         setOn(prev => !prev)
         led = !led
         // console.log('change', !on)
-        console.log("yes")
-        let today = new Date
-        let timeOff = today.toString().split(0, 2).splice(0, 2).join(0)
-        let timeOn = today.toString().split(0, 2).splice(0, 2).join(0)
-        setOffTime(timeOff)
-        setOnTime(timeOn)
         let payload = {
             state: !on,
-            timeOff: currentTime.toString(),
-            timeOn: currentTime.toString(),
-            day: timeOff.toString()
         }
 
         axios.patch(`http://localhost:80/api/setLed/${name}`, payload)
@@ -131,10 +144,22 @@ const Lights = () => {
     }
 
 
+ 
+
+
     return (
         <div className={styles.container}>
             <div className={styles.container__left}>
-                <LightsIOT />
+            <GraphContainer
+                        id={styles.resize}
+                        children={
+                            <DoughnutChart
+                                labels={["TimeOn Today", "Time Off today"]}
+                                data={[timeOn, timeOff]}
+                                item={"STUdio lights"}
+                            />
+                        }
+                    />
             </div>
 
             <div className={styles.container__right}>
@@ -191,11 +216,9 @@ const Lights = () => {
 
                 <div className={styles.container__right__buttons}>
                     <Button variant="contained" style={{ backgroundColor: '#23257A' }} onClick={changeState}> Turn lights {on ? " Off" : " On"}</Button>
-                    <Button variant="contained" style={{ backgroundColor: '#23257A' }}>Turn On Breathe Effect</Button>
                 </div>
             </div>
         </div>
     );
 };
-
 export default Lights;

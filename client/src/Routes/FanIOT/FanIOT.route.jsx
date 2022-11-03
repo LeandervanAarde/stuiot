@@ -50,7 +50,7 @@ const FanIOT = () => {
     useEffect(() => {
         axios.get('http://localhost/api/getFan/')
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 setFanSpeed(res.data.fanSpeed)
                 setFanState(res.data.relay)
 

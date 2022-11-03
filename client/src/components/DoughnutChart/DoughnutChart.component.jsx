@@ -31,17 +31,8 @@ const DoughnutChart = ({ labels, data, item }) => {
                     duration: 2000,
 
                 },
-                //    scales: {
-                //        r: {
-                //            pointLabels: {
-                //                display: true,
-                //                centerPointLabels: true,
-                //                font: {
-                //                    size: 20
-                //                }
-                //            }
-                //        }
-                //    },
+            
+ 
 
                 plugins: {
                     title: {

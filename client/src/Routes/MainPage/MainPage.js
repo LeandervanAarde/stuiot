@@ -23,7 +23,7 @@ const MainDashboardPage = () => {
                 <div className='mainpage__grid__leftpanel'>
                     <img src={logo} />
                     <div className='mainpage__grid__leftpanel__panel'>
-                        <LeftDataPanel />
+                    <LeftDataPanel />
                     </div>
 
 

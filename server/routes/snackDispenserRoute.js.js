@@ -29,8 +29,8 @@ router.post('/api/addDispenserVolume/', (req, res) => {
 
 // Kry laaste Volume van die Dispenser
 router.get('/api/getLastDispenserVolume/', async (req, res) => {
-    const findAll = await snackDispenserVolume.findVol();
-    console.log(findAll);
+    const findAll = await snackDispenserVolume.find();
+    // console.log(findAll);
     let arrayLength = findAll.length
     arrayLength = arrayLength - 1
     res.json(findAll[arrayLength]);

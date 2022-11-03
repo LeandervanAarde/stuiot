@@ -9,6 +9,7 @@ import RightContainerItems from '../RightContainerItems/RightContainerItems.comp
 import { useEffect } from 'react';
 import axios from 'axios'
 
+
 const LeftDataPanel = () => {
     const name = "LeandervanAarde"
 
@@ -20,6 +21,40 @@ const LeftDataPanel = () => {
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0)
     const [hours, setHours] = useState(0);
+    const [dispensedTimer, setDispensedTimer] = useState(0);
+    const [fanstate, setFanstate] = useState('');
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            axios.get('http://localhost/api/getLastDispenserVolume/')
+                .then((res) => {
+                    console.log(res.data.time);
+                    // let totaldata = res.data.slice(Math.max(res.data.length - 50, 0))
+                    const time = res.data.time.slice(11, 16)
+                    setDispensedTimer(time)
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+            axios.get('http://localhost/api/getFan/')
+                .then((res) => {
+                    console.log(res.data.relay);
+                    if (res.data.relay) {
+                        setFanstate("ON")
+                    } else {
+                        setFanstate("OFF")
+                    }
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+        }, 5000);
+
+    }, [])
 
     useEffect(() => {
 
@@ -71,12 +106,13 @@ const LeftDataPanel = () => {
             // ek gaan ekstra usestates hier moet insit om dit aan/af te laat gaan. ek voel dis bietjie redundant, want ek wys die status op die main page in my div block...
             name: "Fan Status",
             image: fanicon,
-            status: "Off"
+            status: `${fanstate}`
         },
         {
             name: "Last dispensed Snack",
             image: snackicon,
-            status: `${hours === 0 ? "00" : hours}: ${minutes === 0 ? "00" : minutes < 10 ? `0${minutes}` : minutes}: ${seconds === 0 ? "00" : seconds < 10 ? `0${seconds}` : seconds} `
+            status: `${dispensedTimer}`,
+            // status: `${hours === 0 ? "00" : hours}: ${minutes === 0 ? "00" : minutes < 10 ? `0${minutes}` : minutes}: ${seconds === 0 ? "00" : seconds < 10 ? `0${seconds}` : seconds} `
         },
         {
             name: "Last dispensed Drink",
